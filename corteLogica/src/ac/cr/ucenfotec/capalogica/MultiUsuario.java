@@ -10,10 +10,10 @@ public class MultiUsuario {
 
     }
 
-    public void crearUsuario(String nombre, String clave) throws Exception {
+    public void registrarUsuario(String nombre, String clave) throws Exception {
 
         String sql;
-        sql = "INSERT INTO usuario "
+        sql = "INSERT INTO usuarios "
                 + "(nombre_usuario, clave) "
                 + "VALUES ('" + nombre + "', '" + clave + "');";
 
