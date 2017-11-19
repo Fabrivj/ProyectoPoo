@@ -1,8 +1,7 @@
 package ac.cr.ucenfotec.capalogica;
 
 public class Juez extends Persona {
-    
-    
+
     private String sala;
     private String usuario;
     private String clave;
@@ -12,7 +11,7 @@ public class Juez extends Persona {
         super();
     }
 
-    public Juez(String sala, String usuario, String clave, int cedula, String nombre, String apellidos, int tel) {
+    public Juez(String sala, String usuario, String clave, int cedula, String nombre, String apellidos, int tel, String rol) {
         super(nombre, apellidos, tel);
         this.sala = sala;
         this.usuario = usuario;
@@ -56,8 +55,5 @@ public class Juez extends Persona {
     public String toString() {
         return "Juez : " + " " + sala + " " + usuario + " " + clave + " " + cedula;
     }
-    
-    
-    
-    
+
 }

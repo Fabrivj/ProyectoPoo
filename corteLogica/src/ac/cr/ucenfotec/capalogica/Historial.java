@@ -5,23 +5,23 @@ import java.time.LocalDate;
 
 public class Historial {
     
-    private int estado;
+    private int historialEstado;
     private LocalDate fecha;
 
     public Historial() {
     }
 
     public Historial(int estado, LocalDate fecha) {
-        this.estado = estado;
+        this.historialEstado = estado;
         this.fecha = fecha;
     }
 
     public int getEstado() {
-        return estado;
+        return historialEstado;
     }
 
     public void setEstado(int estado) {
-        this.estado = estado;
+        this.historialEstado = estado;
     }
 
     public LocalDate getFecha() {
@@ -34,7 +34,7 @@ public class Historial {
 
     @Override
     public String toString() {
-        return "Historial: " + " " + estado + " " + fecha ;
+        return "Historial: " + " " + historialEstado + " " + fecha ;
     }
     
     

@@ -3,6 +3,7 @@ package ac.cr.ucenfotec.capalogica;
 import ac.cr.ucenfotec.bd.AccesoBD;
 import ac.cr.ucenfotec.bd.ConectorBD;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class MultiQuerellante {
 
@@ -18,19 +19,20 @@ public class MultiQuerellante {
 
     }
 
-    public String listarQuerellantes() throws Exception {
-        String datos = null;//Selects generales
+    public ArrayList getQuerellantes() throws Exception {
         String sql;
         ResultSet resultSet;
-        sql = "SELECT * FROM querellantes WHERE id_querellante=2";
-
-        AccesoBD conn = ConectorBD.getConector();
-        conn.ejecutarSQL(sql);
+        ArrayList<Querellante> querellantes;
+        querellantes = new ArrayList<>();
+        sql = "SELECT * "
+                + "from querellantes j join personas p on j.id_persona=p.id_persona;";
         resultSet = ConectorBD.getConector().ejecutarSQL(sql, true);
         while (resultSet.next()) {
-            datos = resultSet.getString("direccion");
+            querellantes.add(new Querellante(resultSet.getString("direccion"),
+                    resultSet.getInt("cedula"),
+                    resultSet.getString("nombre"), resultSet.getString("apellidos"),
+                    resultSet.getInt("telefono"),"Q"));
         }
-
-        return datos;
+        return querellantes;
     }
 }

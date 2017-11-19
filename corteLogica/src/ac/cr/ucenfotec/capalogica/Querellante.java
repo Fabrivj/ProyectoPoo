@@ -9,10 +9,11 @@ public class Querellante extends Persona {
         super();
     }
 
-    public Querellante(String direccion, int cedula, String nombre, String apellidos, int tel) {
+    public Querellante(String direccion, int cedula, String nombre, String apellidos, int tel,String rol) {
         super(nombre, apellidos, tel);
         this.direccion = direccion;
         this.cedula = cedula;
+        
     }
 
     public String getDireccion() {
@@ -33,7 +34,7 @@ public class Querellante extends Persona {
 
     @Override
     public String toString() {
-        return "Querellante: " + " " + direccion + " " + cedula;
+        return "Querellante: " + nombre + " " + apellidos + " " + direccion + " " + cedula + " " + tel;
     }
     
     

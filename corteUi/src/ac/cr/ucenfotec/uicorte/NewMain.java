@@ -8,20 +8,35 @@ public class NewMain {
 
     public static void main(String[] args) throws Exception {
         //MAIN DE PRUEBA NO UTILIZAR
-        
-        MultiUsuario a = new MultiUsuario();
-       
-               
-        Gestor nuevoGes = new Gestor();
-        try {System.out.println( a.validarCredenciales("Fabrivj79", "1234"));
-             
-           // nuevoGes.registrarQuerellante("San jose", 115250454, "Esteban", "Masis", 84541545);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        } catch (ClassNotFoundException e) {
-            System.out.println(e.getMessage());
-        }
 
+        Gestor ges = new Gestor();
+        
+        
+//        -----Registrar secretario
+//https://www.youtube.com/watch?v=2KtHNZ1IUO4
+//        try {
+//            ges.registrarSecretario("Cris24", "1234", "Cristian", "Campos Gonzales", 87451144, 'S');
+//        } catch (SQLException e) {
+//            System.out.println(e.getMessage());
+//        }
+
+        //----PRUEBA DEL LOGIN 
+        try {
+            
+           
+            char acceso=ges.login("115250454", "");
+            if ( acceso== 'J') {
+                System.out.println("Adentro como juez");
+            } else if (acceso == 'S') {
+                System.out.println("Adentro como Secretario");
+            } else if (acceso == 'Q') {
+                System.out.println("Adentro como querellante");
+            } else if(acceso=='N'){
+                System.out.println("Credenciales invalidas");
+            } 
+        } catch (Exception e) {
+            System.out.println("Error");
+        }
     }
 
 }

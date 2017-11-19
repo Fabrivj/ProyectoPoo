@@ -9,7 +9,7 @@ public class Secretario extends Persona {
         super();
     }
 
-    public Secretario(String usuario, String clave, String nombre, String apellidos, int tel) {
+    public Secretario(String usuario, String clave, String nombre, String apellidos, int tel, String rol) {
         super(nombre, apellidos, tel);
         this.usuario = usuario;
         this.clave = clave;
@@ -33,7 +33,7 @@ public class Secretario extends Persona {
 
     @Override
     public String toString() {
-        return "Secretario: " + " " + usuario + " " + clave;
+        return "Secretario: " + nombre + " " + apellidos + " " + usuario + " " + clave;
     }
 
 }
