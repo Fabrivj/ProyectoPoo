@@ -4,6 +4,7 @@ import ac.cr.ucenfotec.bd.AccesoBD;
 import ac.cr.ucenfotec.bd.ConectorBD;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MultiJuez {
@@ -41,5 +42,19 @@ public class MultiJuez {
                     resultSet.getInt("telefono"), resultSet.getString("rol")));
         }
         return jueces;
+    }
+
+    public int idJuez(int cedula) throws SQLException, Exception {
+        String sql;
+        ResultSet resultSet;
+        sql = "SELECT id_juez" + "FROM jueces" + "WHERE" + cedula + "=cedula;";
+        resultSet = ConectorBD.getConector().ejecutarSQL(sql, true);
+        while (resultSet.next()) {
+
+            return resultSet.getInt("id_juez");
+
+        }
+
+        return -1;
     }
 }

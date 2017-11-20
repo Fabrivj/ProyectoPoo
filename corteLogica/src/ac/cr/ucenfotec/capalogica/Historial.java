@@ -2,18 +2,16 @@ package ac.cr.ucenfotec.capalogica;
 
 import java.time.LocalDate;
 
-
 public class Historial {
-    
+
     private int historialEstado;
-    private LocalDate fecha;
 
     public Historial() {
     }
 
-    public Historial(int estado, LocalDate fecha) {
+    public Historial(int estado) {
         this.historialEstado = estado;
-        this.fecha = fecha;
+
     }
 
     public int getEstado() {
@@ -24,18 +22,9 @@ public class Historial {
         this.historialEstado = estado;
     }
 
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
-    }
-
     @Override
     public String toString() {
-        return "Historial: " + " " + historialEstado + " " + fecha ;
+        return "Historial: " + " " + historialEstado;
     }
-    
-    
+
 }

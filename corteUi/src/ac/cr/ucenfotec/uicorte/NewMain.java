@@ -9,34 +9,56 @@ public class NewMain {
     public static void main(String[] args) throws Exception {
         //MAIN DE PRUEBA NO UTILIZAR
 
-        Gestor ges = new Gestor();
-        
-        
-//        -----Registrar secretario
-//https://www.youtube.com/watch?v=2KtHNZ1IUO4
+//       // -----Registrar secretario
+//
 //        try {
 //            ges.registrarSecretario("Cris24", "1234", "Cristian", "Campos Gonzales", 87451144, 'S');
 //        } catch (SQLException e) {
 //            System.out.println(e.getMessage());
 //        }
-
-        //----PRUEBA DEL LOGIN 
+//
+//        //----PRUEBA DEL LOGIN 
+        Gestor ges = new Gestor();
         try {
             
-           
-            char acceso=ges.login("115250454", "");
-            if ( acceso== 'J') {
-                System.out.println("Adentro como juez");
-            } else if (acceso == 'S') {
-                System.out.println("Adentro como Secretario");
-            } else if (acceso == 'Q') {
-                System.out.println("Adentro como querellante");
-            } else if(acceso=='N'){
-                System.out.println("Credenciales invalidas");
-            } 
-        } catch (Exception e) {
-            System.out.println("Error");
-        }
-    }
+            System.out.println(ges.buscarJuez().toString());
 
+        } catch (Exception e) {
+        }
+        
+        
+//        try {
+//            
+//            char acceso = ges.login("Fabrivj79", "1234");
+//            if (acceso == 'J') {
+//                System.out.println("Adentro como juez");
+//            } else if (acceso == 'S') {
+//                System.out.println("Adentro como Secretario");
+//            } else if (acceso == 'Q') {
+//                System.out.println("Adentro como querellante");
+//            } else if (acceso == 'N') {
+//                System.out.println("Credenciales invalidas");
+//            }
+//        } catch (SQLException e) {
+//            System.out.println("Error" + e.getMessage());
+//        }
+
+
+//          -----MANEJOO DE CASOS
+        //Recibido =1 default
+        //Aceptado=2------ a 5 
+         //Consulta =3 ------- de 2 a 4 
+        //rechazado=4
+        //redactado=5 ----- a 7
+        //revision = 6 ------ a 4
+        //resultado=7
+        
+        if (int estado ==1) {
+            
+        }
+    
+        System.out.println("Cambio estado");
+        
+        
+    }
 }

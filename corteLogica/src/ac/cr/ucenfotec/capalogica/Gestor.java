@@ -1,14 +1,19 @@
 package ac.cr.ucenfotec.capalogica;
 
+import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Gestor {
+    //Multis no pueden ser globales
 
     MultiUsuario nuevoUsuario = new MultiUsuario();
     MultiPersona nuevaPer = new MultiPersona();
     MultiJuez nuevoJuez = new MultiJuez();
     MultiQuerellante nuevoQuere = new MultiQuerellante();
     MultiSecretario nuevoSec = new MultiSecretario();
+    MultiCaso nuevoCaso = new MultiCaso();
+    MultiHistorial nuevoHisto= new MultiHistorial();
     ArrayList<Juez> jueces = new ArrayList<>();
     ArrayList<Secretario> secretarios = new ArrayList<>();
     ArrayList<Querellante> querellantes = new ArrayList<>();
@@ -35,6 +40,24 @@ public class Gestor {
 
     }
 
+    public void registrarCaso(int num, String descripcion, Querellante acusador) throws Exception {
+        int idQuerellante = getIdQuerellante(acusador);
+        int idJuez = getIdJuez(buscarJuez());
+        nuevoHisto.registrarHistorial(1);
+        nuevoCaso.registrarCaso(num, descripcion, idQuerellante, idJuez);
+        nuevoHisto.registrarCasoHistorial(LocalDate.MIN,1);
+    }
+
+    public int getIdQuerellante(Querellante acusador) throws Exception {
+
+        return nuevoQuere.idQuerellante(acusador.getCedula());
+    }
+
+    public int getIdJuez(Juez juezEnc) throws Exception {
+
+        return nuevoJuez.idJuez(juezEnc.getCedula());
+    }
+
     public char login(String usuario, String clave) throws Exception {
         jueces = nuevoJuez.getJuez();
         secretarios = nuevoSec.getSecretarios();
@@ -56,6 +79,31 @@ public class Gestor {
         }
 
         return 'N';
+    }
+
+    public Querellante buscarQuerellante(int pCedula) throws Exception {
+        ArrayList<Querellante> listaQuerellante = nuevoQuere.getQuerellantes();
+        Querellante result = null;
+
+        for (Querellante actQuere : listaQuerellante) {
+
+            if (actQuere.getCedula() == pCedula) {
+                result = actQuere;
+                break;
+            }
+        }
+        return result;
+    }
+
+    public Juez buscarJuez() throws Exception {
+        ArrayList<Juez> listaJueeces = nuevoJuez.getJuez();
+        Juez result = null;
+
+        int range = (listaJueeces.size() - 0);
+        int index = (int) (Math.random() * range) + 0;
+        result = listaJueeces.get(index);
+
+        return result;
     }
 
 }

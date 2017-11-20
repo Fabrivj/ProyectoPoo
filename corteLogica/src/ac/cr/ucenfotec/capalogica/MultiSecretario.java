@@ -1,26 +1,26 @@
-
 package ac.cr.ucenfotec.capalogica;
 
 import ac.cr.ucenfotec.bd.AccesoBD;
 import ac.cr.ucenfotec.bd.ConectorBD;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
-
 public class MultiSecretario {
-        public void registrarSecretario() throws Exception {
+
+    public void registrarSecretario() throws SQLException, Exception {
 
         String sql;
         sql = "INSERT INTO secretarios "
                 + "(id_persona,id_usuario) "
-                + "VALUES ((" +  "SELECT MAX(id_persona) FROM personas" + "),("
+                + "VALUES ((" + "SELECT MAX(id_persona) FROM personas" + "),("
                 + "SELECT MAX(id_usuario) FROM usuarios" + "));";
         AccesoBD conn = ConectorBD.getConector();
         conn.ejecutarSQL(sql);
 
     }
 
-    public ArrayList getSecretarios() throws Exception {
+    public ArrayList getSecretarios() throws SQLException, Exception {
         String sql;
         ResultSet resultSet;
         ArrayList<Secretario> secretarios;
@@ -32,7 +32,7 @@ public class MultiSecretario {
             secretarios.add(new Secretario(resultSet.getString("nombre_usuario"),
                     resultSet.getString("clave"),
                     resultSet.getString("nombre"), resultSet.getString("apellidos"),
-                    resultSet.getInt("telefono"),"S"));
+                    resultSet.getInt("telefono"), "S"));
         }
         return secretarios;
     }

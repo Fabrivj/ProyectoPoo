@@ -11,11 +11,14 @@ public class Casos {
     public Casos() {
     }
 
-    public Casos(int num, String descripcion, Historial listado) {
+    public Casos(int num, String descripcion, Querellante acusador, Juez juezEnc, Historial listado) {
         this.num = num;
         this.descripcion = descripcion;
+        this.acusador = acusador;
+        this.juezEnc = juezEnc;
         this.listado = listado;
     }
+   
 
     public int getNum() {
         return num;

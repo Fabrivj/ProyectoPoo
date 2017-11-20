@@ -53,7 +53,8 @@ public class Juez extends Persona {
 
     @Override
     public String toString() {
-        return "Juez : " + " " + sala + " " + usuario + " " + clave + " " + cedula;
+        return "Juez : " + " " + sala + " " + usuario + " " + clave + " " + cedula
+                + " " + nombre;
     }
 
 }
