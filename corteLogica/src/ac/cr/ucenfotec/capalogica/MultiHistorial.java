@@ -13,8 +13,10 @@ public class MultiHistorial {
 
         String sql;
         sql = "INSERT INTO historiales "
-                + "(estado) "
-                + "VALUES('" + estado + "');";
+                + "(id_historial,id_caso,estado) "
+                + "VALUES ((" + "SELECT MAX(id_persona) FROM personas" + "),("
+                + "SELECT MAX(id_usuario) FROM usuarios" + "),'" + estado + "');";
+
         AccesoBD conn = ConectorBD.getConector();
         conn.ejecutarSQL(sql);
 

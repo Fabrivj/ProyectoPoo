@@ -1,11 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2017 a las 01:47:52
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -16,15 +9,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Base de datos: `bd_proyecto_poo`
---
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `casos`
---
 
 CREATE TABLE `casos` (
   `id_caso` int(11) NOT NULL,

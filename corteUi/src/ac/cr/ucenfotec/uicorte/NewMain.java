@@ -18,30 +18,30 @@ public class NewMain {
 //        }
 //
 //        //----PRUEBA DEL LOGIN 
-        Gestor ges = new Gestor();
-        try {
-            
-            System.out.println(ges.buscarJuez().toString());
-
-        } catch (Exception e) {
-        }
-        
-        
+       Gestor ges = new Gestor();
 //        try {
 //            
-//            char acceso = ges.login("Fabrivj79", "1234");
-//            if (acceso == 'J') {
-//                System.out.println("Adentro como juez");
-//            } else if (acceso == 'S') {
-//                System.out.println("Adentro como Secretario");
-//            } else if (acceso == 'Q') {
-//                System.out.println("Adentro como querellante");
-//            } else if (acceso == 'N') {
-//                System.out.println("Credenciales invalidas");
-//            }
-//        } catch (SQLException e) {
-//            System.out.println("Error" + e.getMessage());
+//            System.out.println(ges.buscarJuez().toString());
+//
+//        } catch (Exception e) {
 //        }
+//        
+        
+        try {
+            
+            char acceso = ges.login("Fabrivj79", "1234");
+            if (acceso == 'J') {
+                System.out.println("Adentro como juez");
+            } else if (acceso == 'S') {
+                System.out.println("Adentro como Secretario");
+            } else if (acceso == 'Q') {
+                System.out.println("Adentro como querellante");
+            } else if (acceso == 'N') {
+                System.out.println("Credenciales invalidas");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e.getMessage());
+        }
 
 
 //          -----MANEJOO DE CASOS
@@ -53,11 +53,7 @@ public class NewMain {
         //revision = 6 ------ a 4
         //resultado=7
         
-        if (int estado ==1) {
-            
-        }
-    
-        System.out.println("Cambio estado");
+
         
         
     }

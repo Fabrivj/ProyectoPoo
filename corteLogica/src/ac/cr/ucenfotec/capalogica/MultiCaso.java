@@ -10,9 +10,9 @@ public class MultiCaso {
 
         String sql;
         sql = "INSERT INTO casos "
-                + "(numero,descripcion,id_querellante,id_juez,id_hiatorial) "
+                + "(numero,descripcion,id_querellante,id_juez) "
                 + "VALUES('" + num + "','" + descripcion + "','" + idQuerellante + "','"
-                + idJuez + "',(" + "SELECT MAX(id_historial) FROM historiales" + "));";
+                + idJuez + "');";
         AccesoBD conn = ConectorBD.getConector();
         conn.ejecutarSQL(sql);
 

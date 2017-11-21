@@ -13,7 +13,7 @@ public class Gestor {
     MultiQuerellante nuevoQuere = new MultiQuerellante();
     MultiSecretario nuevoSec = new MultiSecretario();
     MultiCaso nuevoCaso = new MultiCaso();
-    MultiHistorial nuevoHisto= new MultiHistorial();
+    MultiHistorial nuevoHisto = new MultiHistorial();
     ArrayList<Juez> jueces = new ArrayList<>();
     ArrayList<Secretario> secretarios = new ArrayList<>();
     ArrayList<Querellante> querellantes = new ArrayList<>();
@@ -43,9 +43,9 @@ public class Gestor {
     public void registrarCaso(int num, String descripcion, Querellante acusador) throws Exception {
         int idQuerellante = getIdQuerellante(acusador);
         int idJuez = getIdJuez(buscarJuez());
-        nuevoHisto.registrarHistorial(1);
         nuevoCaso.registrarCaso(num, descripcion, idQuerellante, idJuez);
-        nuevoHisto.registrarCasoHistorial(LocalDate.MIN,1);
+        nuevoHisto.registrarHistorial(1);
+        nuevoHisto.registrarCasoHistorial(LocalDate.MIN, 1);
     }
 
     public int getIdQuerellante(Querellante acusador) throws Exception {
