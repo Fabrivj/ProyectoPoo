@@ -40,7 +40,8 @@ public class MultiQuerellante {
     public int idQuerellante(int cedula) throws SQLException, Exception {
         String sql;
         ResultSet resultSet;
-        sql = "SELECT id_querellante" + "FROM querellantes" + "WHERE" + cedula + "=cedula;";
+        sql = "SELECT id_querellante" 
+                + "FROM querellantes" + "WHERE cedula=" + cedula + ";";
         resultSet = ConectorBD.getConector().ejecutarSQL(sql, true);
         while (resultSet.next()) {
 

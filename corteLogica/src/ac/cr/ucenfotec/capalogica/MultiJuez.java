@@ -47,7 +47,7 @@ public class MultiJuez {
     public int idJuez(int cedula) throws SQLException, Exception {
         String sql;
         ResultSet resultSet;
-        sql = "SELECT id_juez" + "FROM jueces" + "WHERE" + cedula + "=cedula;";
+        sql = "SELECT id_juez" + "FROM jueces" + "WHERE cedula=" + cedula + ";";
         resultSet = ConectorBD.getConector().ejecutarSQL(sql, true);
         while (resultSet.next()) {
 
